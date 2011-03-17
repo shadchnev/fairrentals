@@ -2,13 +2,14 @@ GEM
   remote: http://rubygems.org/
   specs:
     curb (0.7.12)
+    dalli (1.0.2)
     haml (3.0.25)
     hashie (1.0.0)
     json (1.4.6)
     rack (1.2.2)
     sinatra (1.2.1)
       rack (~> 1.1)
-      tilt (>= 1.2.2, < 2.0)
+      tilt (< 2.0, >= 1.2.2)
     tilt (1.2.2)
     zoopla (0.2.3)
       curb (~> 0.7.12)
@@ -20,6 +21,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler
+  dalli
   haml
   sinatra
   zoopla
