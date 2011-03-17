@@ -1,0 +1,4 @@
+*.log
+.sass-cache
+tmp
+*.lock

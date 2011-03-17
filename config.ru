@@ -1,6 +1,8 @@
 require 'bundler'
-Bundler.setup
+Bundler.require
 
-require 'sinatra'
-require 'main'
-run Main
+require './app'
+
+use Rack::ShowExceptions
+
+run Sinatra::Application
