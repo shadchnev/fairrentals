@@ -1,26 +1,12 @@
-
-# set sinatra's variables
-set :app_file, __FILE__
 set :root, File.dirname(__FILE__)
-set :views, "views"
-set :public, 'public2'
 
 configure do
-  
-  # Configure public directory
-  set :public, File.join(File.dirname(__FILE__), 'public')
-
-  # Configure HAML and SASS
-  set :haml, { :format => :html5 }
-  set :sass, { :style => :compressed } if ENV['RACK_ENV'] == 'production'
-  
-  
+  require 'sass/plugin/rack'
+  use Sass::Plugin::Rack
 end
 
-# at a minimum, the main sass file must reside within the ./views directory. here, we create a ./views/stylesheets directory where all of the sass files can safely reside.
-get '/stylesheets/:name.css' do
-  content_type 'text/css', :charset => 'utf-8'
-  sass :"stylesheets/#{params[:name]}"
+configure :production do
+  set :sass, { :style => :compressed }
 end
 
 get '/' do
