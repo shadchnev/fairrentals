@@ -4,18 +4,14 @@
   %h2 See what you could rent in Europe within this budget
 #property-details
   %form#search-form
-    #postcode
-      %input{:placeholder => 'Postcode', :type => 'text', :autocapitalize => 'off'}
-    #size
-      %select{:size => 3}
-        %option{:value => "0"} Studio
-        %option{:value => "1", :selected => 'selected'} 1-bedroom flat
-        %option{:value => "2"} 2-bedroom flat
-        %option{:value => "3"} 3-bedroom flat
-        %option{:value => "4"} 4-bedroom flat
-    #price
-      %input{:placeholder => 'Weekly rent (&pound;)', :type => 'text'}
-    #compare
-      %button Compare my rent
+    %input#postcode{:placeholder => 'Postcode', :type => 'text', :autocapitalize => 'off'}
+    %select#size{:size => 3}
+      %option{:value => "0"} Studio
+      %option{:value => "1", :selected => 'selected'} 1-bedroom flat
+      %option{:value => "2"} 2-bedroom flat
+      %option{:value => "3"} 3-bedroom flat
+      %option{:value => "4"} 4-bedroom flat
+    %input#price{:placeholder => 'Weekly rent (&pound;)', :type => 'text'}
+    %input#compare{:type => 'submit', :value => 'Compare my rent'}
 #fair-result
 #berlin

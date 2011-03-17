@@ -6,47 +6,54 @@ $light_blue: #C5CEE5
 $cream: #EAEAEA
 $black: #333
 
-body
-  text-align: center
+html,body
   font-family: 'Helvetica Neue',arial,helvetica,sans-serif
   background-color: $cream
+  margin: 0
+  padding: 0
 
 h1
   font-size: 250%
-  margin-bottom: 15px
+  margin: 0 0 15px
 h2
   font-size: 150%
   margin-bottom: 10px
 
-#header
+header
   height: 20px
   background-color: $dark_blue
 
 #welcome
   color: $cream
   background-color: $blue
-  padding: 40px 0
+  padding: 20px 0
+  text-align: center
 
 #property-details
-  padding: 20px 0
   background-color: $light_blue
-  input, select, button
-    font-size: 200%
+  form
     width: 300px
-    margin: 5px 0
+    padding: 5px 0
+    margin: 5px auto
+    input, select
+      display: block
+      padding: 2px 0
+      margin: 5px 0
+      width: 100%
+      font-size: 20px
 
-#fair-result
+#similar
   background-color: white
   border-top: 1px solid $dark_blue
+  border-bottom: 1px solid $dark_blue
   padding: 10px 0
   font-weight: bold
   font-size: 18px
+  text-align: center
 
-#berlin
-  border-top: 1px solid $dark_blue
-
-#footer
+footer
   margin: 5px 0
   background-color: $cream
   color: $black
   font-size: 80%
+  text-align: center
