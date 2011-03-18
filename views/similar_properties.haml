@@ -1,8 +1,11 @@
-#similar
+%div
   Average rental price in your area is &pound;
   = @average
   per week.
-  Your property is
-  = "#{@difference.abs}%"
-  = (@difference < 0) ? 'more' : 'less'
-  expensive than similar flats in the area
+  - if @difference != 0
+    Your property is
+    = "#{@difference.abs}%"
+    = (@difference < 0) ? 'more' : 'less'
+    expensive than similar flats in the area
+  - else
+    You pay the same rent as your neighbours

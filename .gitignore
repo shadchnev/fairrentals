@@ -2,3 +2,4 @@
 .sass-cache
 tmp
 *.lock
+.DS_Store

@@ -25,15 +25,20 @@ end
 
 post '/similar-properties' do
   price = params[:price].to_i rescue 0
-  return 'meh' unless price > 0
+  raise 'Price is not valid' unless price > 0
   Search.create(:postcode => params[:postcode], :beds => params[:beds], :price => params[:price])
   cache_key = "#{params[:postcode].gsub!(/[^a-z0-9\-_]+/, '')}-#{params[:beds].to_i}-prices"
   if prices = CACHE.get(cache_key)
   else
     rentals = Zoopla.new('ghj3ebxfkb6q6ndudww6crrc').rentals
     prices = []
-    # price_range = (price*0.9).round..(price*1.1).round
-    rentals.flats.in({:postcode => params[:postcode]}).beds(params[:beds].to_i).within(0.2).each{|listing|
+    beds = params[:beds].to_i
+    rentals = rentals.flats.in({:postcode => params[:postcode]}).include_rented.within(0.2)
+    rentals = rentals.beds(beds) if beds > 0 # it looks like zoopla doesn't understand 0 in here
+    rentals.each{|listing|
+      puts "#{listing.price} - #{listing.num_bedrooms} beds - #{listing.details_url}"
+      studio = listing.description =~ /bedsit|studio/i
+      next if ((beds == 1) and studio) || (beds != listing.num_bedrooms)
       prices << listing.price if listing.price
     }
     CACHE.set(cache_key, prices)

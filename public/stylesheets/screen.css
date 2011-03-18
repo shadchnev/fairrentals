@@ -146,7 +146,7 @@ caption, tbody, tfoot, thead, tr, th, td {
 
 html, body {
   font-family: "Helvetica Neue", arial, helvetica, sans-serif;
-  background-color: #eaeaea;
+  background-color: white;
   margin: 0;
   padding: 0; }
 
@@ -173,7 +173,7 @@ header {
   #property-details form {
     width: 300px;
     padding: 5px 0;
-    margin: 5px auto; }
+    margin: 0 auto; }
     #property-details form input, #property-details form select {
       display: block;
       padding: 2px 0;
@@ -182,18 +182,17 @@ header {
       font-size: 20px;
       text-align: center; }
 
-#similar {
+#fair-result div {
+  text-align: center;
   background-color: white;
   border-top: 1px solid #2d354d;
   border-bottom: 1px solid #2d354d;
   padding: 10px 0;
   font-weight: bold;
-  font-size: 18px;
-  text-align: center; }
+  font-size: 18px; }
 
 footer {
   margin: 5px 0;
-  background-color: #eaeaea;
   color: #333333;
   font-size: 80%;
   text-align: center; }
