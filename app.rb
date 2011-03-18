@@ -48,6 +48,50 @@ post '/similar-properties' do
   haml :similar_properties, :layout => false
 end
 
+post '/abroad' do
+  max_properties = 5
+  euro_to_pound = 1.14
+  region = params[:region].to_sym
+  capitals = {
+    :de => "Berlin",
+    :it => 'Rome',
+    :es => 'Madrid',
+    :it => 'Delhi',
+    :fr => 'Paris'
+  }
+  @city = capitals[region]
+  room_type = [:uk, :es].include?(region) ? "bedroom" : 'room' # in uk and es we use bedrooms, unlike the rest of the world
+  beds = params[:beds].to_i + 1 # you'll get nicer photos, probably
+  size = {"#{room_type}_min".to_sym => beds, "#{room_type}_max".to_sym => beds}
+  price = params[:price].to_i * euro_to_pound * 4.33 # weeks in a month
+  price_min = (price * 0.9).round
+  price_max = (price * 1.1).round
+  query = {:property_type => 'flat', 
+           :listing_type => 'rent', 
+           :place_name => @city,
+           :price_min => price_min,
+           :price_max => price_max,
+           :has_photo => '1',           
+           }.merge!(size)
+  results = Nestoria::Api.new(region).search(query)
+  code = results["application_response_code"].to_i
+  all_properties = []
+  raise "Bad reply from Nestoria: #{code}" unless (100..110).include?(code)
+  results["listings"].each do |listing|
+    next unless listing["price_type"] == "monthly"
+    all_properties << {:price => (listing["price"].to_i / euro_to_pound / 4.33).round, :image => listing["img_url"], :url => listing["lister_url"], :size => listing["room_number"] || listing["bedroom_number"]}    
+  end
+  @properties = []
+  if all_properties.length <= max_properties
+    @properties = all_properties
+  else
+    max_properties.times do |i|
+      @properties << all_properties.slice!(rand(all_properties.length), 1).first
+    end
+  end
+  haml :abroad, :layout => false
+end
+
 class Search
   include Mongoid::Document
   include Mongoid::Timestamps

@@ -151,11 +151,11 @@ html, body {
   padding: 0; }
 
 h1 {
-  font-size: 250%;
+  font-size: 200%;
   margin: 0 0 15px; }
 
 h2 {
-  font-size: 150%;
+  font-size: 130%;
   margin-bottom: 10px; }
 
 header {
@@ -182,17 +182,27 @@ header {
       font-size: 20px;
       text-align: center; }
 
-#fair-result div {
+.section > div {
   text-align: center;
   background-color: white;
   border-top: 1px solid #2d354d;
-  border-bottom: 1px solid #2d354d;
-  padding: 10px 0;
+  padding: 15px 0;
   font-weight: bold;
   font-size: 18px; }
 
+.capital .title {
+  margin: 5px 0; }
+.capital .flats .size {
+  font-size: 80%;
+  margin: 5px 0; }
+.capital .flats .flat {
+  display: inline-block; }
+  .capital .flats .flat img {
+    border: 0; }
+
 footer {
-  margin: 5px 0;
+  padding: 5px 0;
   color: #333333;
   font-size: 80%;
-  text-align: center; }
+  text-align: center;
+  border-top: 1px solid #2d354d; }

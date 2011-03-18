@@ -1,5 +1,6 @@
 require 'bundler'
 Bundler.require
+require 'nestoria/api'
 
 require './app'
 

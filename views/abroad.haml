@@ -1,0 +1,9 @@
+.capital
+  .title In #{@city} you could live in one of those flats
+  .flats
+    - @properties.each do |p|
+      .flat
+        .size #{p[:size]}-bedroom (&pound; #{p[:price]})
+        .image
+          %a{:href => p[:url]}
+            %img{:src => p[:image]}

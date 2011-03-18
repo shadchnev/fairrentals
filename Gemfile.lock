@@ -1,34 +1,37 @@
+GIT
+  remote: git@github.com:shadchnev/nestoria.git
+  revision: da09e3b24051e2c83712636b2a199339cce294f1
+  specs:
+    nestoria (1.0.0)
+      json
+      json
+
 GEM
   remote: http://rubygems.org/
   specs:
-    activemodel (3.0.5)
-      activesupport (= 3.0.5)
-      builder (~> 2.1.2)
-      i18n (~> 0.4)
-    activesupport (3.0.5)
+    activesupport (2.3.11)
     bson (1.2.4)
     bson_ext (1.2.4)
-    builder (2.1.2)
-    curb (0.7.12)
+    curb (0.7.14)
     dalli (1.0.2)
+    durran-validatable (2.0.1)
     haml (3.0.25)
     hashie (1.0.0)
-    i18n (0.5.0)
     json (1.4.6)
     mongo (1.2.4)
       bson (>= 1.2.4)
-    mongoid (2.0.0.rc.7)
-      activemodel (~> 3.0)
-      mongo (~> 1.2)
-      tzinfo (~> 0.3.22)
-      will_paginate (~> 3.0.pre)
+    mongoid (1.9.5)
+      activesupport (< 3.0.0)
+      bson (~> 1.2.1)
+      durran-validatable (>= 2.0.1)
+      mongo (~> 1.2.1)
+      will_paginate (< 2.9)
     rack (1.2.2)
     sinatra (1.2.1)
       rack (~> 1.1)
-      tilt (< 2.0, >= 1.2.2)
+      tilt (>= 1.2.2, < 2.0)
     tilt (1.2.2)
-    tzinfo (0.3.24)
-    will_paginate (3.0.pre2)
+    will_paginate (2.3.15)
     zoopla (0.2.3)
       curb (~> 0.7.12)
       hashie (~> 1.0.0)
@@ -43,5 +46,6 @@ DEPENDENCIES
   dalli
   haml
   mongoid
+  nestoria!
   sinatra
   zoopla
