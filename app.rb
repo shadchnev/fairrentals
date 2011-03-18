@@ -31,7 +31,7 @@ post '/similar-properties' do
   
   Search.create(:postcode => postcode, :beds => beds, :price => price)  
   @average = Property.average_price(postcode, beds)
-  @difference = ((@average / price.to_f - 1) * 100).round if @average
+  @difference = ((price.to_f / @average  - 1) * 100).round if @average
   
   haml :similar_properties, :layout => false
 end

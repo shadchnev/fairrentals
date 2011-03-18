@@ -6,20 +6,19 @@ function showError(responseText, textStatus, xhr) {
 
 $(document).ready(function() {
   $('form').submit(function() {
-    payload = {
+    var payload = {
       postcode: $('#postcode').val(),
       beds: $('#size').val(),
       price: $('#price').val()
     }
-    $('#fair-result, #berlin').html('<div><img src="/images/ajax-loader.gif" /></div>')
-    $('#fair-result, #paris').html('<div><img src="/images/ajax-loader.gif" /></div>')
-    $('#fair-result, #madrid').html('<div><img src="/images/ajax-loader.gif" /></div>')
-    $('#fair-result, #rome').html('<div><img src="/images/ajax-loader.gif" /></div>')
-    $('#fair-result').load('/similar-properties', payload, showError);
-    $('#berlin').load('/abroad', $.extend(payload, {region: 'de'}), showError);
-    $('#paris').load('/abroad', $.extend(payload, {region: 'fr'}), showError);
-    $('#madrid').load('/abroad', $.extend(payload, {region: 'es'}), showError);
-    $('#rome').load('/abroad', $.extend(payload, {region: 'it'}), showError);
+    var regions = {
+      de: '#berlin',
+      fr: '#paris',
+      es: '#madrid',
+      it: '#rome'
+    }
+    $('#fair-result').html('<div><div class="spinner"></div>').load('/similar-properties', payload, showError);
+    $.each(regions, function(region, id) { $(id).load('/abroad', $.extend(payload, {region: region}), showError) })
     return false;
   })
 })

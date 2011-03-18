@@ -200,6 +200,12 @@ header {
   .capital .flats .flat img {
     border: 0; }
 
+.spinner {
+  width: 220px;
+  height: 19px;
+  margin: 0 auto;
+  background: url(/images/ajax-loader.gif); }
+
 footer {
   padding: 5px 0;
   color: #333333;
