@@ -1,10 +1,9 @@
 #welcome<>
-  %h1 Is Your Rent Fair?
-  %h2 Find out what you could get today for your money
-  %h2 See what you could rent in Europe within this budget
+  %h1 It's expensive to rent in the UK
+  %h2 Find out what you could get for your money elsewhere
 #property-details
   %form#search-form
-    %input#postcode{:placeholder => 'Your Postcode', :type => 'text', :autocapitalize => 'off'}
+    %input#postcode{:placeholder => 'Your UK Postcode', :type => 'text', :autocapitalize => 'off'}
     %select#size{:size => 3}
       %option{:value => "0"} Studio
       %option{:value => "1", :selected => 'selected'} 1-bedroom flat
@@ -15,3 +14,5 @@
 #fair-result.section<>
 #berlin.section<>
 #paris.section<>
+#madrid.section<>
+#rome.section<>
