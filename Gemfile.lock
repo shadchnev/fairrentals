@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:shadchnev/nestoria.git
+  remote: git://github.com/shadchnev/nestoria.git
   revision: da09e3b24051e2c83712636b2a199339cce294f1
   specs:
     nestoria (1.0.0)
