@@ -3,7 +3,7 @@ set :root, File.dirname(__FILE__)
 configure do
   require 'sass/plugin/rack'
   use Sass::Plugin::Rack
-  CACHE = Dalli::Client.new(:expires_in => 1.day)
+  CACHE = Dalli::Client.new(nil, :expires_in => 1.day)
   Mongoid.configure do |config|
     if ENV['MONGOHQ_URL']
       conn = Mongo::Connection.from_uri(ENV['MONGOHQ_URL'])
