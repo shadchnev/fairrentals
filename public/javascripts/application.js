@@ -12,8 +12,10 @@ $(document).ready(function() {
       price: $('#price').val()
     }
     $('#fair-result, #berlin').html('<div><img src="/images/ajax-loader.gif" /></div>')
+    $('#fair-result, #paris').html('<div><img src="/images/ajax-loader.gif" /></div>')
     $('#fair-result').load('/similar-properties', payload, showError);
     $('#berlin').load('/abroad', $.extend(payload, {region: 'de'}), showError);
+    $('#paris').load('/abroad', $.extend(payload, {region: 'fr'}), showError);
     return false;
   })
 })
