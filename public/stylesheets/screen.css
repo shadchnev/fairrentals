@@ -1,0 +1,199 @@
+html {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  line-height: 1; }
+
+div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  quotes: none; }
+
+pre, a, abbr, acronym, address, big, cite, code {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+del {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: line-through; }
+
+dfn, em, font, img {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+ins {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none; }
+
+kbd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+q {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  quotes: none; }
+
+s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+ol, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  list-style: none; }
+
+li, fieldset, form, label, legend {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+table {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+*:focus {
+  outline: 0; }
+
+html, body {
+  font-family: "Helvetica Neue", arial, helvetica, sans-serif;
+  background-color: #eaeaea;
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-size: 250%;
+  margin: 0 0 15px; }
+
+h2 {
+  font-size: 150%;
+  margin-bottom: 10px; }
+
+header {
+  height: 20px;
+  background-color: #2d354d; }
+
+#welcome {
+  color: #eaeaea;
+  background-color: #586998;
+  padding: 20px 0;
+  text-align: center; }
+
+#property-details {
+  background-color: #c5cee5; }
+  #property-details form {
+    width: 300px;
+    padding: 5px 0;
+    margin: 5px auto; }
+    #property-details form input, #property-details form select {
+      display: block;
+      padding: 2px 0;
+      margin: 5px 0;
+      width: 100%;
+      font-size: 20px;
+      text-align: center; }
+
+#similar {
+  background-color: white;
+  border-top: 1px solid #2d354d;
+  border-bottom: 1px solid #2d354d;
+  padding: 10px 0;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center; }
+
+footer {
+  margin: 5px 0;
+  background-color: #eaeaea;
+  color: #333333;
+  font-size: 80%;
+  text-align: center; }
