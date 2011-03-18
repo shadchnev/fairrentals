@@ -43,9 +43,9 @@ class Property
   end
   
   def self.average_price(postcode, beds)
-    cache_key = "#{postcode.gsub!(/[^a-z0-9\-_]+/, '')}-#{beds}-prices"
+    cache_key = "#{postcode.gsub(/[^a-z0-9\-_]+/i, '')}-#{beds}-prices"
     prices = latest_prices(postcode, beds, cache_key) unless prices = CACHE.get(cache_key)
-    prices.size ? prices.inject(0) {|sum, price| sum += price} / prices.size : nil
+    prices.size > 0 ? prices.inject(0) {|sum, price| sum += price} / prices.size : nil
   end
   
   def self.latest_prices(postcode, beds, cache_key)
