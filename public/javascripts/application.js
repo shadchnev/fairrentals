@@ -21,6 +21,7 @@ $(document).ready(function() {
       }
   });
   $('form').submit(function() {
+    if (!$('form').valid()) return false;
     var payload = {
       postcode: $('#postcode').val(),
       beds: $('#size').val(),

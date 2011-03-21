@@ -6,7 +6,7 @@ class Property
   PLACEHOLDERS = [
     'http://1.s.fr.nestoria.nestimg.com/i/all/all/all/g/cs3.2.png',
     'http://2.l.it.nestoria.nestimg.com/1vd/0/6/1vd064a5ead9ec7c53fc6e49d39eaa83d5d86a795f.2.jpg',
-    'http://3.s.es.nestoria.nestimg.com/i/all/all/all/g/cs3.2.png'  
+    'http://3.s.es.nestoria.nestimg.com/i/all/all/all/g/cs3.2.png',
     ]
   
   CAPITALS = {
