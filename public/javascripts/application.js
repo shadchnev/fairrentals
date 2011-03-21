@@ -9,6 +9,17 @@ function handleError(responseText, textStatus, xhr) {
 }
 
 $(document).ready(function() {
+  $('form').validate({
+    rules: {
+        postcode: {
+          required: true
+        },
+        price: {
+          required: true,
+          number: true
+        }
+      }
+  });
   $('form').submit(function() {
     var payload = {
       postcode: $('#postcode').val(),

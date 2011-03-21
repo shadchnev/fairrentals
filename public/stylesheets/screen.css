@@ -174,6 +174,9 @@ h2 {
 #search-form {
   text-align: center; }
 
+.error {
+  color: red; }
+
 #property-details {
   background-color: #c5cee5; }
   #property-details form {
