@@ -158,7 +158,7 @@ h2 {
   font-size: 130%;
   margin-bottom: 10px; }
 
-header {
+#header {
   height: 20px;
   background-color: #2d354d; }
 
@@ -209,7 +209,7 @@ header {
   margin: 0 auto;
   background: url(/images/ajax-loader.gif); }
 
-footer {
+#footer {
   padding: 5px 0;
   color: #333333;
   font-size: 80%;
