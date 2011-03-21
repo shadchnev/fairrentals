@@ -3,6 +3,11 @@ class Property
   MAX_PROPERTIES = 5
   EURO_TO_POUND = 1.14
   WEEKS_IN_A_MONTH = 4.33
+  PLACEHOLDERS = [
+    'http://1.s.fr.nestoria.nestimg.com/i/all/all/all/g/cs3.2.png',
+    'http://2.l.it.nestoria.nestimg.com/1vd/0/6/1vd064a5ead9ec7c53fc6e49d39eaa83d5d86a795f.2.jpg',
+    'http://3.s.es.nestoria.nestimg.com/i/all/all/all/g/cs3.2.png'  
+    ]
   
   CAPITALS = {
     :de => {:city => "Berlin", :search_term => "Berlin"},
@@ -30,9 +35,11 @@ class Property
   def self.listings(region, price, beds)
     results = Nestoria::Api.new(region).search(nestoria_query(region, price, beds))
     raise "Bad reply from Nestoria: #{results["application_response_code"]}" unless (100..110).include?(results["application_response_code"].to_i)
-    all_properties = results["listings"].inject([]) do |all_properties, listing|
-      next unless listing["price_type"] == "monthly"
-      all_properties << {:price => (listing["price"].to_i / EURO_TO_POUND / WEEKS_IN_A_MONTH).round, :image => listing["img_url"], :url => listing["lister_url"], :size => listing["room_number"] || listing["bedroom_number"]}    
+    all_properties = results["listings"].inject([]) do |all, listing|
+      if listing["price_type"] == "monthly" and !PLACEHOLDERS.include?(listing["img_url"])
+        all << {:price => (listing["price"].to_i / EURO_TO_POUND / WEEKS_IN_A_MONTH).round, :image => listing["img_url"], :url => listing["lister_url"], :size => listing["room_number"] || listing["bedroom_number"]}    
+      end
+      all
     end
     return all_properties if all_properties.length <= MAX_PROPERTIES
     properties = []
