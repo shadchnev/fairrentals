@@ -171,6 +171,9 @@ h2 {
 .addthis_toolbox {
   width: 400px; }
 
+#search-form {
+  text-align: center; }
+
 #property-details {
   background-color: #c5cee5; }
   #property-details form {
